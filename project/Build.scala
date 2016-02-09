@@ -22,7 +22,7 @@ object Build extends BaseBuild {
   import Dependencies._
 
   val `project-version` = taskKey[Unit]("Print the current version")
-  val projectVersion = "0.1.0-SNAPSHOT"
+  val projectVersion = "1.0.0"
 
   lazy val commonSettings = Seq(
     organization := "seeruk",
