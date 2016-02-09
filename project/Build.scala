@@ -28,7 +28,6 @@ object Build extends BaseBuild {
     organization := "seeruk",
     publishMavenStyle := true,
     publishTo := Some(Resolver.file("release", new File("./release"))),
-    resolvers ++= Dependencies.repositories,
     scalaVersion := "2.11.7",
     version := projectVersion,
     testOptions in Test += Tests.Argument("-oD")
