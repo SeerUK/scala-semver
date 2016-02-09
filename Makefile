@@ -1,8 +1,8 @@
 build: PROJECT_VERSION = $(shell docker-compose run --rm sbt_project_version | tail -1)
 build: sbt-version
 	docker-compose run --rm sbt_build
-	tar czvf ./release/eidolon-console.tar.gz -C ./release ./eidolon
-	cp ./release/eidolon-console.tar.gz ./release/eidolon-console_${PROJECT_VERSION}.tar.gz
+	tar czvf ./release/seeruk_scala-semver.tar.gz -C ./release ./eidolon
+	cp ./release/seeruk_scala-semver.tar.gz ./release/seeruk_scala-semver_${PROJECT_VERSION}.tar.gz
 
 clean:
 	rm -rf ./project/target

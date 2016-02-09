@@ -24,6 +24,7 @@ object Dependencies {
   def test(deps: ModuleID*): Seq[ModuleID] = deps.map(_ % "test")
 
   val mockito = "org.mockito" % "mockito-core" % "1.10.19"
+  val scalaParserCombinators = "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4"
   val scalaTest = "org.scalatest" %% "scalatest" % "2.2.6"
 }
 

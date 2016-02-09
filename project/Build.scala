@@ -40,6 +40,7 @@ object Build extends BaseBuild {
       println(projectVersion)
     })
     .settings(libraryDependencies ++=
+      compile(scalaParserCombinators) ++
       test(mockito, scalaTest)
     )
 }
