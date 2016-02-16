@@ -2,7 +2,7 @@ build: PROJECT_VERSION = $(shell docker-compose run --rm sbt_project_version | t
 build: sbt-version
 	docker-compose run --rm sbt_build
 	tar czvf ./release/seeruk_scala-semver.tar.gz -C ./release ./seeruk
-	cp ./release/seeruk_scala-semver.tar.gz ./release/seeruk_scala-semver_${PROJECT_VERSION}.tar.gz
+	cp ./release/seeruk-scala-semver.tar.gz ./release/seeruk-scala-semver_${PROJECT_VERSION}.tar.gz
 
 clean:
 	rm -rf ./project/target
