@@ -22,7 +22,6 @@ object Build extends BaseBuild {
 
   import Dependencies._
 
-  val `project-version` = taskKey[Unit]("Print the current version")
   val projectVersion = Source.fromFile(file("./VERSION")).getLines().mkString.trim
 
   lazy val commonSettings = Seq(
@@ -37,9 +36,6 @@ object Build extends BaseBuild {
   lazy val semver = (project in file("."))
     .settings(commonSettings: _*)
     .settings(name := "semver")
-    .settings(`project-version` := {
-      println(projectVersion)
-    })
     .settings(libraryDependencies ++=
       compile(scalaParserCombinators) ++
       test(mockito, scalaTest)
