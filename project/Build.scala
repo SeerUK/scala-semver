@@ -11,6 +11,7 @@
 
 import sbt.Keys._
 import sbt.{Build => BaseBuild, _}
+import scala.io.Source
 
 /**
  * Main build file
@@ -22,7 +23,7 @@ object Build extends BaseBuild {
   import Dependencies._
 
   val `project-version` = taskKey[Unit]("Print the current version")
-  val projectVersion = "1.0.0"
+  val projectVersion = Source.fromFile(file("./VERSION")).getLines().mkString.trim
 
   lazy val commonSettings = Seq(
     organization := "seeruk",
